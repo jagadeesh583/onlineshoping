@@ -1,0 +1,44 @@
+@(message: String, id : Integer, item :  List[Item])
+@main("Welcome to Play") {  
+   
+   <center>
+     <style>
+body {
+    background-color:  pink;
+    background-image: url("sample-1.jpg");
+}
+</style>
+       @message
+       
+           
+               <form action="@routes.Application.index()" method="get">
+                <button type="submit">Home</button>
+               </form>
+               @if(item.nonEmpty){
+              <h3>ITEM LIST</h3>
+           <table BORDER=4 CELLSPACING=4 CELLPADDING=4>
+             <tr>
+             <th>ITEM ID</th>
+             <th>ITEM Name</th>
+             <th>ITEM PRICE</th>
+             </tr>
+            <form action="@routes.Application.add()"  method="post">
+                   @for(p <- item){
+                   	
+                        <tr><td>
+                        <input type="checkbox" name="iid[]" value="@p.id">@p.id</td><td>@p.itemname</td><td>@p.price</td>
+                        </tr>
+                        }
+        </table>
+    
+           <table>
+                  <tr><td></td><td>
+                  <input type="hidden"  value="@id" name="id"></td></tr>
+                <tr><td></td><td><button><input type="submit"value="add"></button></td></tr>
+          </form>
+          </table>
+          } else {
+          <h3>There is no Items</h3>
+          }
+   </center>
+  }

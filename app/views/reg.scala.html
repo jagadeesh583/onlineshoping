@@ -1,0 +1,54 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+   
+    <center>
+      <style>
+body {
+    background-color:  pink;
+}
+</style>
+
+  
+    <form action="@routes.Application.register()" method="post">
+    <table>
+    <tr>
+   	 <td></td>
+        <td>	
+        	<input type="hidden" value="cust" name="type" required="required">
+    	</td>
+    </tr>
+    <tr>
+    <td>Customer Name:</td>
+    	<td>
+    <input type="text" name="cusname" required="required">
+    	</td>
+    </tr>
+    <tr>
+    <td>Password:</td>
+    	<td>
+     <input type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="required">
+        </td>
+    </tr>
+    <tr>
+    <td>Mobile Number</td>
+    	<td>
+    		<input type="text" pattern="[7-9]{1}[0-9]{9}" name="mno" required="required"
+     			title="Must contain 10 digits and should start with 9/8/7 ">
+     	</td>
+    </tr>
+    <tr>
+    <td></td>
+    	<td>
+    	<button input type="reset" value="Reset">Reset</button>
+    	<button input type="submit" value="register">Register</button>
+    	</td>
+    </tr>
+    </table>
+    </form>
+    </center>
+    
+   
+}

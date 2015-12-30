@@ -1,0 +1,18 @@
+@(message: String)(id : Integer)
+
+@main("Welcome to Play") {
+	<center>
+	<style>
+body {
+    background-color:  pink;
+    background-image: url("sample-1.jpg");
+}
+</style>
+    @message @id
+    
+    <form action="@routes.Application.index()" method="get">
+
+    <tr> <td></td><td><input type="submit" name="cusname" value="Home"></button></td></tr>
+    </form>
+</center>
+}

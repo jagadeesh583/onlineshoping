@@ -1,0 +1,54 @@
+@(message: String)
+
+@main("Welcome to Play") {
+
+   <center>
+      <style>
+body {
+    background-color:  pink;
+}
+</style>
+	  
+	  <h3>Insert the  Items with Price</h3>
+	  @message
+    <form action="@routes.Application.register()" method="post">
+    <table>
+    <tr>
+    <td>
+    </td>
+    <td>
+      <input type="hidden" value="item" name="type" required="required">
+      </td>
+      </tr>
+    <tr>
+    <td>ITEM Name</td>
+    <td>
+     <input type="text" name="itemname" required="required">
+     </td>
+     </tr>
+    <tr>
+    <td> Number of items  </td>
+    <td>
+    <input type="text" name="noofitems" required="required">
+    </td>
+    </tr>
+     <tr>
+     <td>  MRP rate of each item </td><td><input type="text" name="price" required="required">
+     </td>
+     </tr>
+    <tr>
+    <td></td>
+    <td><button>
+    <input type="reset" value="Reset"></button>
+    <button><input type="submit" value="ADD"></button>
+    </td>
+    </tr>
+    </table>
+    </form>
+    
+          <h3>please logout after adding items </h3>
+    <form action="@routes.Application.index()" method="get">
+    <button type="submit" >Log out</button>
+    </form>
+    </center>
+}

@@ -1,0 +1,89 @@
+@(message: String)(id : Integer)
+
+@main("Welcome to Play") {
+
+   
+    <center>
+    
+<head>
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+body {
+    background-color:  pink;
+}
+</style>
+   </head>
+    @message
+   
+    <form action="@routes.Application.addItem()" method="post">
+     <tr>
+     <td>
+     </td>
+     <td>
+     	<input type="hidden" value="@id" name="id">
+     </td>
+     </tr>
+    <tr>
+    <td>
+    </td>
+    <td>
+    	<button input type="submit" class="btn btn-info" value="AddItem">Add_item</button>	
+    </td>
+    </tr>
+    </form><br> <br>
+    	<form action="@routes.Application.removeItem()" method="post">
+	 <tr>
+	 <td>
+	 </td>
+	 <td>
+	 	<input type="hidden" value="@id" name="id">
+	 </td>
+	 </tr>
+    <tr>
+    <td>
+    </td>
+    	<td><button input type="submit" class="btn btn-info" value="RemoveItem"> Remove_item</button>
+    </td>
+    </tr>
+    </form>
+    <br> <br>
+   <!-- <form action="@routes.Application.deleteCustomer()" method="post">
+	 <tr><td></td><td><input type="hidden" value="@id" name="id"></td></tr>
+    <tr><td></td><td><input type="submit" name="cusname" value="DeleteCustomer"></button></td></tr>
+    </form>
+    -->
+
+    <form action="@routes.Application.index()" method="get">
+
+    <tr>
+    <td>
+    </td>
+    <td>
+    <button input type="submit"  class="btn btn-info"> logout</button>
+    </td>
+    </tr>
+    <br> <br>
+    </form>
+   	  <form action="@routes.Application.genbill()" method="post">
+     <tr>
+     <td>
+     </td>
+     <td>
+     	<input type="hidden" value="@id" name="id">
+     </td>
+     </tr>
+    <tr>
+    <td>
+    </td>
+    <td>
+    	<button input type="submit"  class="btn btn-info">GenerateBill</button>
+    </td>
+    </tr>
+   
+   	</center>
+
+}

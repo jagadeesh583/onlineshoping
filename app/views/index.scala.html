@@ -1,0 +1,47 @@
+@(message: String)
+
+@main("Welcome to Play") {
+    <center>
+      <style>
+body {
+    background-color:  pink;
+}
+</style>
+    <marquee style="border:RED 3px SOLID">
+    
+    </marquee>
+     <form action="@routes.Application.reg()" method="post">
+ 	<p>Are you New Customer</p>
+    	<button input type="submit" value="Register">Register</button>
+    </form>
+    <table>
+    <form action="@routes.Application.log()" method="post">
+    <tr>
+    <td>Customer id</td>
+    <td>
+    	<input type="text" name="id" required="required">
+    </td>
+    </tr>
+    <tr>
+    <td>password :</td>
+    <td>
+    <input type="password" name="pass" required="required">
+    </td>
+    </tr>
+    <tr>
+    <td>
+    </td>
+    <td>
+    	<button input type="reset" value="Clear">clear</button>
+    	<button input type="submit" value="Login">Login</button>
+    </td>
+    </tr>
+    </form>
+    </table>
+ 	<br><br>		
+ 	<!--  <form action="@routes.Application.item()" method="post">
+ 	<p> INSERT NEW ITEMS</p>
+    <button><input type="submit" value="ADD NEW ITEMS"></button>
+    </form> -->
+    </center>
+}
