@@ -308,6 +308,7 @@ public class Application extends Controller {
     	{
 			e.printStackTrace();
         }
-    	return ok(views.html.all.render("your bill is generated please logout ",bn.id));
+    	return ok(views.html.genbill.render("your bill is generated please check "));
+    	//return ok(views.html.all.render("your bill is generated please logout ",bn.id));
           }
 }
